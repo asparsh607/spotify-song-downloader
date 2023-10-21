@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Playlist Link</title>
+        <meta name="description" content="Enter a playlist link and get its details from Spotify"> 
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> 
+        <style> body { @apply bg-gradient-to-b from-blue-500 via-orange-500 to-yellow-500; } .gradient-bg {background-image: linear-gradient(45deg,#FB2576,#F6FA70); } </style> 
+    </head> 
+    <body class="min-h-screen flex items-center justify-center gradient-bg"> 
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg shadow-md mx-auto max-w-lg space-y-4 transition transform hover:scale-105"> <!-- Added some classes for styling and animation --> 
+            <h4 class="text-lg font-semibold text-white">Enter the Playlist link here:</h4> 
+            <form action='{{ url_for("playlist_name") }}' method="post"> 
+                <div class="relative"> 
+                    <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 pl-10" placeholder="Playlist link" name="link_of_playlist" required autofocus> <!-- Added some classes for styling and added a left padding --> 
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3"> <!-- Added a span element for the icon --> 
+                        <svg class="h-5 w-5 text-gray-400 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- Added an svg element for the icon --> 
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/> 
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12l8.121 8.121M12 12L3.879 3.879M12 12l8.121-8.121"/> 
+                        </svg> 
+                    </span> 
+                </div> 
+                <br> <!-- Added a line break for spacing --> 
+                <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 animate-pulse">GO!</button> <!-- Added some classes for styling and animation --> 
+            </form>
+        </div>
+
+        <div class="w-full flex items-center justify-between p-4 bg-black bg-opacity-50 fixed bottom-0">
+            <!-- Social media links -->
+            <div class="flex space-x-4">
+                <a href="https://www.github.com/asparsh607" class="text-white hover:text-gray-300"
+                    ><i class="fab fa-github"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/asparsh-raj" class="text-white hover:text-gray-300"
+                    ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://instagram.com/asparsh_r?igshid=ZDc4ODBmNjlmNQ==" class="text-white hover:text-gray-300"
+                    ><i class="fab fa-instagram"></i
+                ></a>
+            </div>
+            <!-- Disclaimer -->
+            <p class="text-sm text-white">This is a demo website for educational purposes only.</p>
+        </div>
+    </body>
+</html>

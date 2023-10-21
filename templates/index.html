@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Download Option</title>
+    <!-- Importing Tailwind CSS, Font Awesome, and Animate.css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        @apply bg-gradient-to-b from-blue-500 via-orange-500 to-yellow-500;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+      }
+      .option:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col items-center justify-center"
+    style="background-image: linear-gradient(45deg, #fb2576, #f6fa70)"
+  >
+    <!-- Header section -->
+    <div class="w-full flex items-center justify-between p-4 bg-black bg-opacity-50 fixed top-0">
+      <h1 class="text-4xl font-bold text-white">Download Your Favourite Music</h1>
+      <div></div>
+      <!-- Empty div for spacing -->
+    </div>
+
+    <!-- Main section -->
+    <div class="bg-black p-8 rounded-lg shadow-md mt-20" style="background-color: #00000087">
+        <h4 class="text-lg font-semibold mb-4 text-white">
+            Choose your download option:
+        </h4>
+        <div class="flex space-x-4">
+            <!-- Single track option -->
+            <a
+                href="{{ url_for('single_track') }}"
+                class="option flex flex-col items-center justify-center p-4 rounded-lg bg-white hover:bg-gray-100"
+            >
+                <i class="fas fa-music text-6xl text-blue-500"></i>
+                <span class="text-xl font-medium text-gray-800">Single Track</span>
+            </a>
+            <!-- Entire playlist option -->
+            <a
+                href="{{ url_for('playlist') }}"
+                class="option flex flex-col items-center justify-center p-4 rounded-lg bg-white hover:bg-gray-100"
+            >
+                <i class="fas fa-list text-6xl text-orange-500"></i>
+                <span class="text-xl font-medium text-gray-800">Entire Playlist</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <div class="w-full flex items-center justify-between p-4 bg-black bg-opacity-50 fixed bottom-0">
+        <!-- Social media links -->
+        <div class="flex space-x-4">
+            <a href="https://www.github.com/asparsh607" class="text-white hover:text-gray-300"
+                ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/asparsh-raj" class="text-white hover:text-gray-300"
+                ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://instagram.com/asparsh_r?igshid=ZDc4ODBmNjlmNQ==" class="text-white hover:text-gray-300"
+                ><i class="fab fa-instagram"></i
+            ></a>
+        </div>
+        <!-- Disclaimer -->
+        <p class="text-sm text-white">
+            This is a demo website for educational purposes only.
+        </p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thanks, please visit again.</title>
+        <!-- Added a meta tag for the description -->
+        <meta name="description" content="Enter a playlist link and get its details from Spotify">
+        <!-- Imported the tailwindcss, font-awesome, and animate.css libraries -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+            body {
+                @apply bg-gradient-to-b from-blue-500 via-orange-500 to-yellow-500;
+            }
+            .gradient-bg {
+                /* Added a custom class for the gradient background */
+                background-image: linear-gradient(45deg,#FB2576,#F6FA70);
+            }
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: rgb(38, 212, 131);
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+
+            .button_download {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: rgb(20, 24, 247);
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+            /* Added some classes for the emoji and buttons animations */
+            .emoji:hover {
+                animation: bounce 1s infinite;
+            }
+
+            .button:hover {
+                animation: pulse 1s infinite;
+            }
+
+            .button_download:hover {
+                animation: pulse 1s infinite;
+            }
+
+            /* Added a keyframe for the bounce animation */
+            @keyframes bounce {
+                0%, 100% {
+                    transform: translateY(-25%);
+                    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+                }
+                50% {
+                    transform: translateY(0);
+                    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                }
+            }
+        </style>
+    </head>
+    <body class="min-h-screen flex items-center justify-center gradient-bg">
+        <!-- Used the custom class for the body element -->
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg shadow-md text-center mx-auto max-w-lg space-y-4 transition transform hover:scale-105">
+            <!-- Added some classes for styling and animation -->
+            <h1 class="text-white text-9xl mb-4 emoji"> 🧑🏽‍💻</h1>
+            <!-- Added a class for the emoji -->
+            <h2 class="text-white text-2xl mb-4">Thanks for using the app, Click <a href="{{ url_for('download') }}" class="button_download">Here</a> to download your files.</h2>
+            <!-- Changed the font size and color of the text -->
+            <br>
+            <a href="{{ url_for('index') }}" class="button">Use Again</a>
+            <!-- Added a class for the button -->
+            <a href="https://www.linkedin.com/in/asparsh-raj" class="button">Visit My LinkedIn</a>
+            <!-- Added a class for the button -->
+        </div>
+
+        <div class="w-full flex items-center justify-between p-4 bg-black bg-opacity-50 fixed bottom-0">
+            <!-- Social media links -->
+            <div class="flex space-x-4">
+                <a href="https://www.github.com/asparsh607" class="text-white hover:text-gray-300"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/asparsh-raj" class="text-white hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/asparsh_r?igshid=ZDc4ODBmNjlmNQ==" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            </div>
+            <!-- Disclaimer -->
+            <p class="text-sm text-white">This is a demo website for educational purposes only.</p>
+        </div>
+    </body>
+</html>
